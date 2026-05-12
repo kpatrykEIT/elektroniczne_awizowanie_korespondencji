@@ -1,4 +1,4 @@
-\# Elektroniczne awizowanie korespondencji
+# System elektronicznego awizowania korespondencji przychodzącej
 
 
 
