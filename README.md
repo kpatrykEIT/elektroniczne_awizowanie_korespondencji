@@ -1,4 +1,4 @@
-\# Elektroniczne awizowanie korespondencji
+# System elektronicznego awizowania korespondencji przychodzącej
 
 
 
@@ -18,8 +18,6 @@ Zarządzanie Użytkownikami: Webowy panel administracyjny umożliwiający pełne
 
 Skalowalność: Architektura przygotowana do obsługi wielu urządzeń ESP32 w jednej sieci oraz integracji z automatyką budynkową.
 
-
-
 \-----------------------------------------------------------------------------------------------------------------------
 
 Stos Technologiczny:
@@ -31,4 +29,16 @@ Backend: Flask (Python) – przetwarzanie danych i obsługa API.
 Komunikacja: Protokół HTTP / SMTP (powiadomienia).
 
 Frontend: Interfejs webowy do administracji systemem.
+
+\-----------------------------------------------------------------------------------------------------------------------
+
+Układ katalogów:
+
+/core - Kod źródłowy dla mikrokontrolera ESP32.
+
+/assets - Dodatkowe artefakty, takie jak grafiki UI panelu administracyjnego.
+
+/docs - Specyfikacje techniczne, schematy podłączenia pinów oraz dokumentacja API.
+
+/.vscode - Pliki konfiguracyjne środowiska IDE
 
