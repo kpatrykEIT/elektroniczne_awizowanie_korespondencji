@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "name": "Admin",
+        "email": "kiedrowskimarcin@wp.pl",
+        "role": "admin"
+    }
+  {
+        "id": 2,
+        "name": "Kac total",
+        "email": "adasdas@wp.pl",
+        "role": "user"
+    }
+]
