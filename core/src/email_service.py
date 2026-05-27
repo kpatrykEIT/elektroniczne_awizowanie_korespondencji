@@ -1,3 +1,6 @@
+## @package email_service
+#  Moduł służący do wysyłania powiadomień e-mail z załącznikami.
+
 import os
 import smtplib
 
@@ -9,6 +12,11 @@ from email import encoders
 from config import config
 
 
+## Wysyła wiadomość e-mail za pośrednictwem serwera SMTP.
+#  @param to_email Adres e-mail odbiorcy.
+#  @param subject Temat wiadomości.
+#  @param body Treść wiadomości tekstowej.
+#  @param attachment_path Opcjonalna ścieżka do pliku, który ma zostać dołączony jako załącznik.
 def send_email(to_email, subject, body, attachment_path=None):
     try:
         msg = MIMEMultipart()

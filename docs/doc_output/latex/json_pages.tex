@@ -1,0 +1,32 @@
+\chapter{Pliki Konfiguracyjne JSON }
+\hypertarget{json_pages}{}\label{json_pages}\index{Pliki Konfiguracyjne JSON@{Pliki Konfiguracyjne JSON}}
+\hypertarget{json_pages_users_sec}{}\doxysection{\texorpdfstring{Plik danych użytkowników (users.\+json)}{Plik danych użytkowników (users.\+json)}}\label{json_pages_users_sec}
+Ten plik przechowuje listę zarejestrowanych użytkowników systemu wraz z ich rolami.
+\begin{DoxyItemize}
+\item Przykładowa zawartość:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{[}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{stringliteral}{"{}id"{}}:\ 1,}
+\DoxyCodeLine{\textcolor{stringliteral}{"{}name"{}}:\ \textcolor{stringliteral}{"{}Admin"{}},}
+\DoxyCodeLine{\textcolor{stringliteral}{"{}email"{}}:\ \textcolor{stringliteral}{"{}kiedrowskimarcin@wp.pl"{}},}
+\DoxyCodeLine{\textcolor{stringliteral}{"{}role"{}}:\ \textcolor{stringliteral}{"{}admin"{}}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{]}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}\hypertarget{json_pages_config_sec}{}\doxysection{\texorpdfstring{Plik konfiguracyjny aplikacji (config.\+json)}{Plik konfiguracyjny aplikacji (config.\+json)}}\label{json_pages_config_sec}
+Ten plik zawiera kluczowe ustawienia serwera Flask oraz dane dostępowe do skrzynki SMTP wykorzystywanej przez aplikację.
+
+Domyślna struktura:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{stringliteral}{"{}admin\_email"{}}:\ \textcolor{stringliteral}{"{}twoj\_email@gmail.com"{}},}
+\DoxyCodeLine{\textcolor{stringliteral}{"{}email\_password"{}}:\ \textcolor{stringliteral}{"{}twoje\_haslo\_app"{}},}
+\DoxyCodeLine{\textcolor{stringliteral}{"{}smtp\_server"{}}:\ \textcolor{stringliteral}{"{}smtp.gmail.com"{}},}
+\DoxyCodeLine{\textcolor{stringliteral}{"{}smtp\_port"{}}:\ 587}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

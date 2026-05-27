@@ -1,0 +1,110 @@
+\doxysection{Dokumentacja przestrzeni nazw routes\+\_\+users}
+\hypertarget{namespaceroutes__users}{}\label{namespaceroutes__users}\index{routes\_users@{routes\_users}}
+
+
+Punkty końcowe (endpoints) Flask do zarządzania użytkownikami (CRUD).  
+
+
+\doxysubsubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{namespaceroutes__users_aa7faefa2c735e4c7abdabc777a022479}{list\+\_\+users}} ()
+\begin{DoxyCompactList}\small\item\em Zwraca listę wszystkich zarejestrowanych użytkowników. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{namespaceroutes__users_a69e8de25de7560db0292bb474882a489}{add\+\_\+user}} ()
+\begin{DoxyCompactList}\small\item\em Dodaje nowego użytkownika do bazy danych. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{namespaceroutes__users_a73ddddef45ffccaf3c0a7c350e50b44f}{delete\+\_\+user}} (user\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Usuwa użytkownika z bazy danych na podstawie ID. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{namespaceroutes__users_a9e5914ce8a5d5cdc99c5e37791c7e7ef}{update\+\_\+user}} (user\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Aktualizuje dane istniejącego użytkownika. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{namespaceroutes__users_ac9f926d020c4e586b9eef3314cb9f4c8}{users\+\_\+bp}} = Blueprint("{}users"{}, \+\_\+\+\_\+name\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Blueprint dla tras zarządzania użytkownikami. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Punkty końcowe (endpoints) Flask do zarządzania użytkownikami (CRUD). 
+
+Wymagają weryfikacji uprawnień administratora. 
+
+\label{namespaceroutes__users_doc-func-members}
+\Hypertarget{namespaceroutes__users_doc-func-members}
+\doxysubsection{Dokumentacja funkcji}
+\Hypertarget{namespaceroutes__users_a69e8de25de7560db0292bb474882a489}\index{routes\_users@{routes\_users}!add\_user@{add\_user}}
+\index{add\_user@{add\_user}!routes\_users@{routes\_users}}
+\doxysubsubsection{\texorpdfstring{add\_user()}{add\_user()}}
+{\footnotesize\ttfamily \label{namespaceroutes__users_a69e8de25de7560db0292bb474882a489} 
+add\+\_\+user (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Dodaje nowego użytkownika do bazy danych. 
+
+Wymaga, aby w polu {\ttfamily admin\+\_\+email} przesłać e-\/mail administratora. @route POST /\+users @request\+\_\+json name Nazwa użytkownika. @request\+\_\+json email Adres e-\/mail użytkownika. @request\+\_\+json admin\+\_\+email Adres e-\/mail osoby zlecającej (wymagany admin). @request\+\_\+json role Opcjonalna rola (domyślnie "{}user"{}). \begin{DoxyReturn}{Zwraca}
+Status 201 (sukces) lub 403 (brak uprawnień). 
+\end{DoxyReturn}
+\Hypertarget{namespaceroutes__users_a73ddddef45ffccaf3c0a7c350e50b44f}\index{routes\_users@{routes\_users}!delete\_user@{delete\_user}}
+\index{delete\_user@{delete\_user}!routes\_users@{routes\_users}}
+\doxysubsubsection{\texorpdfstring{delete\_user()}{delete\_user()}}
+{\footnotesize\ttfamily \label{namespaceroutes__users_a73ddddef45ffccaf3c0a7c350e50b44f} 
+delete\+\_\+user (\begin{DoxyParamCaption}\item[{}]{user\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Usuwa użytkownika z bazy danych na podstawie ID. 
+
+@route DELETE /\+users/\+$<$user\+\_\+id$>$ 
+\begin{DoxyParams}{Parametry}
+{\em user\+\_\+id} & Identyfikator użytkownika do usunięcia. @request\+\_\+json admin\+\_\+email Adres e-\/mail osoby zlecającej (wymagany admin). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Status 200 (sukces) lub 403 (brak uprawnień). 
+\end{DoxyReturn}
+\Hypertarget{namespaceroutes__users_aa7faefa2c735e4c7abdabc777a022479}\index{routes\_users@{routes\_users}!list\_users@{list\_users}}
+\index{list\_users@{list\_users}!routes\_users@{routes\_users}}
+\doxysubsubsection{\texorpdfstring{list\_users()}{list\_users()}}
+{\footnotesize\ttfamily \label{namespaceroutes__users_aa7faefa2c735e4c7abdabc777a022479} 
+list\+\_\+users (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Zwraca listę wszystkich zarejestrowanych użytkowników. 
+
+@route GET /\+users \begin{DoxyReturn}{Zwraca}
+Lista użytkowników w formacie JSON. 
+\end{DoxyReturn}
+\Hypertarget{namespaceroutes__users_a9e5914ce8a5d5cdc99c5e37791c7e7ef}\index{routes\_users@{routes\_users}!update\_user@{update\_user}}
+\index{update\_user@{update\_user}!routes\_users@{routes\_users}}
+\doxysubsubsection{\texorpdfstring{update\_user()}{update\_user()}}
+{\footnotesize\ttfamily \label{namespaceroutes__users_a9e5914ce8a5d5cdc99c5e37791c7e7ef} 
+update\+\_\+user (\begin{DoxyParamCaption}\item[{}]{user\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Aktualizuje dane istniejącego użytkownika. 
+
+@route PUT /\+users/\+$<$user\+\_\+id$>$ 
+\begin{DoxyParams}{Parametry}
+{\em user\+\_\+id} & Identyfikator modyfikowanego użytkownika. @request\+\_\+json admin\+\_\+email Adres e-\/mail osoby zlecającej (wymagany admin). @request\+\_\+json name Nowa nazwa (opcjonalnie). @request\+\_\+json email Nowy e-\/mail (opcjonalnie). @request\+\_\+json role Nowa rola (opcjonalnie). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Status 200 (sukces) lub 403 (brak uprawnień). 
+\end{DoxyReturn}
+
+
+\label{namespaceroutes__users_doc-var-members}
+\Hypertarget{namespaceroutes__users_doc-var-members}
+\doxysubsection{Dokumentacja zmiennych}
+\Hypertarget{namespaceroutes__users_ac9f926d020c4e586b9eef3314cb9f4c8}\index{routes\_users@{routes\_users}!users\_bp@{users\_bp}}
+\index{users\_bp@{users\_bp}!routes\_users@{routes\_users}}
+\doxysubsubsection{\texorpdfstring{users\_bp}{users\_bp}}
+{\footnotesize\ttfamily \label{namespaceroutes__users_ac9f926d020c4e586b9eef3314cb9f4c8} 
+routes\+\_\+users.\+users\+\_\+bp = Blueprint("{}users"{}, \+\_\+\+\_\+name\+\_\+\+\_\+)}
+
+
+
+Blueprint dla tras zarządzania użytkownikami. 
+

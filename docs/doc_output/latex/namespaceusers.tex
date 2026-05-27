@@ -1,0 +1,90 @@
+\doxysection{Dokumentacja przestrzeni nazw users}
+\hypertarget{namespaceusers}{}\label{namespaceusers}\index{users@{users}}
+
+
+Moduł zarządzający bazą danych użytkowników zapisaną w pliku JSON.  
+
+
+\doxysubsubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{namespaceusers_a05bbc7a1ff6ecf413db2c5948d7751c8}{load\+\_\+users}} ()
+\begin{DoxyCompactList}\small\item\em Ładuje listę użytkowników z pliku JSON. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{namespaceusers_a6351a790a70ac7e4260c3c5854778cb7}{save\+\_\+users}} (users)
+\begin{DoxyCompactList}\small\item\em Zapisuje aktualną listę użytkowników do pliku JSON. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{namespaceusers_ae38365c883851129624d55a5c48e8ae1}{is\+\_\+admin}} (email)
+\begin{DoxyCompactList}\small\item\em Sprawdza, czy użytkownik o podanym adresie e-\/mail posiada uprawnienia administratora. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{namespaceusers_aecf6011616b64a146dbb1da642598118}{find\+\_\+user\+\_\+by\+\_\+id}} (user\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Wyszukuje użytkownika w bazie na podstawie jego unikalnego identyfikatora ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Moduł zarządzający bazą danych użytkowników zapisaną w pliku JSON. 
+
+\label{namespaceusers_doc-func-members}
+\Hypertarget{namespaceusers_doc-func-members}
+\doxysubsection{Dokumentacja funkcji}
+\Hypertarget{namespaceusers_aecf6011616b64a146dbb1da642598118}\index{users@{users}!find\_user\_by\_id@{find\_user\_by\_id}}
+\index{find\_user\_by\_id@{find\_user\_by\_id}!users@{users}}
+\doxysubsubsection{\texorpdfstring{find\_user\_by\_id()}{find\_user\_by\_id()}}
+{\footnotesize\ttfamily \label{namespaceusers_aecf6011616b64a146dbb1da642598118} 
+find\+\_\+user\+\_\+by\+\_\+id (\begin{DoxyParamCaption}\item[{}]{user\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Wyszukuje użytkownika w bazie na podstawie jego unikalnego identyfikatora ID. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em user\+\_\+id} & Identyfikator (int) szukanego użytkownika. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Słownik z danymi użytkownika lub None, jeśli nie znaleziono. 
+\end{DoxyReturn}
+\Hypertarget{namespaceusers_ae38365c883851129624d55a5c48e8ae1}\index{users@{users}!is\_admin@{is\_admin}}
+\index{is\_admin@{is\_admin}!users@{users}}
+\doxysubsubsection{\texorpdfstring{is\_admin()}{is\_admin()}}
+{\footnotesize\ttfamily \label{namespaceusers_ae38365c883851129624d55a5c48e8ae1} 
+is\+\_\+admin (\begin{DoxyParamCaption}\item[{}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Sprawdza, czy użytkownik o podanym adresie e-\/mail posiada uprawnienia administratora. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em email} & Adres e-\/mail sprawdzanego użytkownika. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+True, jeśli użytkownik jest administratorem, w przeciwnym wypadku False. 
+\end{DoxyReturn}
+\Hypertarget{namespaceusers_a05bbc7a1ff6ecf413db2c5948d7751c8}\index{users@{users}!load\_users@{load\_users}}
+\index{load\_users@{load\_users}!users@{users}}
+\doxysubsubsection{\texorpdfstring{load\_users()}{load\_users()}}
+{\footnotesize\ttfamily \label{namespaceusers_a05bbc7a1ff6ecf413db2c5948d7751c8} 
+load\+\_\+users (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Ładuje listę użytkowników z pliku JSON. 
+
+Jeśli plik nie istnieje, inicjalizuje go pustą listą. \begin{DoxyReturn}{Zwraca}
+Lista (list) słowników z danymi użytkowników. 
+\end{DoxyReturn}
+\Hypertarget{namespaceusers_a6351a790a70ac7e4260c3c5854778cb7}\index{users@{users}!save\_users@{save\_users}}
+\index{save\_users@{save\_users}!users@{users}}
+\doxysubsubsection{\texorpdfstring{save\_users()}{save\_users()}}
+{\footnotesize\ttfamily \label{namespaceusers_a6351a790a70ac7e4260c3c5854778cb7} 
+save\+\_\+users (\begin{DoxyParamCaption}\item[{}]{users}{}\end{DoxyParamCaption})}
+
+
+
+Zapisuje aktualną listę użytkowników do pliku JSON. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em users} & Lista słowników reprezentujących użytkowników do zapisu. \\
+\hline
+\end{DoxyParams}

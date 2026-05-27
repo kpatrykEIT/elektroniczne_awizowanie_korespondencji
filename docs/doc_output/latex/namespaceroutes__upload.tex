@@ -1,0 +1,83 @@
+\doxysection{Dokumentacja przestrzeni nazw routes\+\_\+upload}
+\hypertarget{namespaceroutes__upload}{}\label{namespaceroutes__upload}\index{routes\_upload@{routes\_upload}}
+
+
+Punkty końcowe (endpoints) Flask obsługujące przesyłanie plików ze zdjęciami (PC oraz ESP).  
+
+
+\doxysubsubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{namespaceroutes__upload_ac992d848ea4a5422dc6bdaef4f571b73}{upload\+\_\+photo\+\_\+from\+\_\+laptop}} ()
+\begin{DoxyCompactList}\small\item\em Obsługuje przesyłanie zdjęcia paczki bezpośrednio z komputera (laptopa). \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{namespaceroutes__upload_a76cb4dd47b3ca50059eee7905ee32947}{esp\+\_\+message}} ()
+\begin{DoxyCompactList}\small\item\em Odbiera proste wiadomości tekstowe/\+statusowe w formacie JSON z modułu ESP. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{namespaceroutes__upload_ac4a1f54b1a2d3171b3e5f7d9d4886ce4}{esp\+\_\+upload}} ()
+\begin{DoxyCompactList}\small\item\em Obsługuje zaawansowane przesyłanie zdjęć i metadanych bezpośrednio z urządzenia ESP. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{namespaceroutes__upload_a21a30e1c565d81b8b7cdd2b8d8415b06}{upload\+\_\+bp}} = Blueprint("{}upload"{}, \+\_\+\+\_\+name\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Blueprint dla tras przesyłania plików. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Punkty końcowe (endpoints) Flask obsługujące przesyłanie plików ze zdjęciami (PC oraz ESP). 
+
+\label{namespaceroutes__upload_doc-func-members}
+\Hypertarget{namespaceroutes__upload_doc-func-members}
+\doxysubsection{Dokumentacja funkcji}
+\Hypertarget{namespaceroutes__upload_a76cb4dd47b3ca50059eee7905ee32947}\index{routes\_upload@{routes\_upload}!esp\_message@{esp\_message}}
+\index{esp\_message@{esp\_message}!routes\_upload@{routes\_upload}}
+\doxysubsubsection{\texorpdfstring{esp\_message()}{esp\_message()}}
+{\footnotesize\ttfamily \label{namespaceroutes__upload_a76cb4dd47b3ca50059eee7905ee32947} 
+esp\+\_\+message (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Odbiera proste wiadomości tekstowe/\+statusowe w formacie JSON z modułu ESP. 
+
+@route POST /\+esp @request\+\_\+json Dane wysłane przez ESP. \begin{DoxyReturn}{Zwraca}
+Odpowiedź JSON potwierdzająca odebranie wiadomości. 
+\end{DoxyReturn}
+\Hypertarget{namespaceroutes__upload_ac4a1f54b1a2d3171b3e5f7d9d4886ce4}\index{routes\_upload@{routes\_upload}!esp\_upload@{esp\_upload}}
+\index{esp\_upload@{esp\_upload}!routes\_upload@{routes\_upload}}
+\doxysubsubsection{\texorpdfstring{esp\_upload()}{esp\_upload()}}
+{\footnotesize\ttfamily \label{namespaceroutes__upload_ac4a1f54b1a2d3171b3e5f7d9d4886ce4} 
+esp\+\_\+upload (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obsługuje zaawansowane przesyłanie zdjęć i metadanych bezpośrednio z urządzenia ESP. 
+
+Generuje unikalną nazwę pliku na podstawie znacznika czasu i powiadamia mailowo użytkownika. @route POST /\+esp-\/upload @request\+\_\+form file Plik graficzny z kamery ESP. @request\+\_\+form json Ciąg tekstowy JSON zawierający:\+ device\+\_\+id, user\+\_\+id, message. \begin{DoxyReturn}{Zwraca}
+Odpowiedź JSON ze statusem 200, 400, 404 lub 500 (błąd serwera). 
+\end{DoxyReturn}
+\Hypertarget{namespaceroutes__upload_ac992d848ea4a5422dc6bdaef4f571b73}\index{routes\_upload@{routes\_upload}!upload\_photo\_from\_laptop@{upload\_photo\_from\_laptop}}
+\index{upload\_photo\_from\_laptop@{upload\_photo\_from\_laptop}!routes\_upload@{routes\_upload}}
+\doxysubsubsection{\texorpdfstring{upload\_photo\_from\_laptop()}{upload\_photo\_from\_laptop()}}
+{\footnotesize\ttfamily \label{namespaceroutes__upload_ac992d848ea4a5422dc6bdaef4f571b73} 
+upload\+\_\+photo\+\_\+from\+\_\+laptop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obsługuje przesyłanie zdjęcia paczki bezpośrednio z komputera (laptopa). 
+
+Zapisuje plik i wysyła powiadomienie e-\/mail do adresata. @route POST /\+upload @request\+\_\+form file Plik graficzny (.jpg). @request\+\_\+form user\+\_\+id Identyfikator użytkownika docelowego. \begin{DoxyReturn}{Zwraca}
+Odpowiedź JSON ze statusem 200 (sukces) lub 400/\+404 (błąd). 
+\end{DoxyReturn}
+
+
+\label{namespaceroutes__upload_doc-var-members}
+\Hypertarget{namespaceroutes__upload_doc-var-members}
+\doxysubsection{Dokumentacja zmiennych}
+\Hypertarget{namespaceroutes__upload_a21a30e1c565d81b8b7cdd2b8d8415b06}\index{routes\_upload@{routes\_upload}!upload\_bp@{upload\_bp}}
+\index{upload\_bp@{upload\_bp}!routes\_upload@{routes\_upload}}
+\doxysubsubsection{\texorpdfstring{upload\_bp}{upload\_bp}}
+{\footnotesize\ttfamily \label{namespaceroutes__upload_a21a30e1c565d81b8b7cdd2b8d8415b06} 
+routes\+\_\+upload.\+upload\+\_\+bp = Blueprint("{}upload"{}, \+\_\+\+\_\+name\+\_\+\+\_\+)}
+
+
+
+Blueprint dla tras przesyłania plików. 
+

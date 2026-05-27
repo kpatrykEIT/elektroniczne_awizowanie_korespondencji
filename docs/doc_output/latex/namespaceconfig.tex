@@ -1,0 +1,89 @@
+\doxysection{Dokumentacja przestrzeni nazw config}
+\hypertarget{namespaceconfig}{}\label{namespaceconfig}\index{config@{config}}
+
+
+Moduł odpowiedzialny za konfigurację aplikacji oraz zarządzanie plikami JSON.  
+
+
+\doxysubsubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{namespaceconfig_a792d2cc0623d4b7f0cec51da8a86e585}{load\+\_\+config}} ()
+\begin{DoxyCompactList}\small\item\em Ładuje konfigurację aplikacji z pliku JSON. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+str \doxymbox{\hyperlink{namespaceconfig_abb5c3467db4660963e1b43dd4c05bdd4}{UPLOAD\+\_\+\+FOLDER}} = "{}uploads"{}
+\begin{DoxyCompactList}\small\item\em Ścieżka do katalogu, w którym zapisywane są przesyłane zdjęcia. \end{DoxyCompactList}\item 
+str \doxymbox{\hyperlink{namespaceconfig_a49c756aa5720ecf2f6de914bcf7f89c4}{USER\+\_\+\+FILE}} = "{}users.\+json"{}
+\begin{DoxyCompactList}\small\item\em Nazwa pliku JSON przechowującego dane użytkowników. \end{DoxyCompactList}\item 
+str \doxymbox{\hyperlink{namespaceconfig_aa3d00fbb1e1bc6d3a88a24931091f1fc}{CONFIG\+\_\+\+FILE}} = "{}config.\+json"{}
+\begin{DoxyCompactList}\small\item\em Nazwa pliku JSON z danymi konfiguracyjnymi (np. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{namespaceconfig_a727dfd4afc52784e9f4cb4122634b2ea}{config}} = \doxymbox{\hyperlink{namespaceconfig_a792d2cc0623d4b7f0cec51da8a86e585}{load\+\_\+config}}()
+\begin{DoxyCompactList}\small\item\em Globalny obiekt konfiguracji załadowany przy starcie modułu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Moduł odpowiedzialny za konfigurację aplikacji oraz zarządzanie plikami JSON. 
+
+\label{namespaceconfig_doc-func-members}
+\Hypertarget{namespaceconfig_doc-func-members}
+\doxysubsection{Dokumentacja funkcji}
+\Hypertarget{namespaceconfig_a792d2cc0623d4b7f0cec51da8a86e585}\index{config@{config}!load\_config@{load\_config}}
+\index{load\_config@{load\_config}!config@{config}}
+\doxysubsubsection{\texorpdfstring{load\_config()}{load\_config()}}
+{\footnotesize\ttfamily \label{namespaceconfig_a792d2cc0623d4b7f0cec51da8a86e585} 
+load\+\_\+config (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Ładuje konfigurację aplikacji z pliku JSON. 
+
+Jeśli plik konfiguracyjny nie istnieje, tworzy go z domyślnymi wartościami. \begin{DoxyReturn}{Zwraca}
+Słownik (dict) zawierający ustawienia administratora i serwera SMTP. 
+\end{DoxyReturn}
+
+
+\label{namespaceconfig_doc-var-members}
+\Hypertarget{namespaceconfig_doc-var-members}
+\doxysubsection{Dokumentacja zmiennych}
+\Hypertarget{namespaceconfig_a727dfd4afc52784e9f4cb4122634b2ea}\index{config@{config}!config@{config}}
+\index{config@{config}!config@{config}}
+\doxysubsubsection{\texorpdfstring{config}{config}}
+{\footnotesize\ttfamily \label{namespaceconfig_a727dfd4afc52784e9f4cb4122634b2ea} 
+config.\+config = \doxymbox{\hyperlink{namespaceconfig_a792d2cc0623d4b7f0cec51da8a86e585}{load\+\_\+config}}()}
+
+
+
+Globalny obiekt konfiguracji załadowany przy starcie modułu. 
+
+\Hypertarget{namespaceconfig_aa3d00fbb1e1bc6d3a88a24931091f1fc}\index{config@{config}!CONFIG\_FILE@{CONFIG\_FILE}}
+\index{CONFIG\_FILE@{CONFIG\_FILE}!config@{config}}
+\doxysubsubsection{\texorpdfstring{CONFIG\_FILE}{CONFIG\_FILE}}
+{\footnotesize\ttfamily \label{namespaceconfig_aa3d00fbb1e1bc6d3a88a24931091f1fc} 
+str config.\+CONFIG\+\_\+\+FILE = "{}config.\+json"{}}
+
+
+
+Nazwa pliku JSON z danymi konfiguracyjnymi (np. 
+
+SMTP). \Hypertarget{namespaceconfig_abb5c3467db4660963e1b43dd4c05bdd4}\index{config@{config}!UPLOAD\_FOLDER@{UPLOAD\_FOLDER}}
+\index{UPLOAD\_FOLDER@{UPLOAD\_FOLDER}!config@{config}}
+\doxysubsubsection{\texorpdfstring{UPLOAD\_FOLDER}{UPLOAD\_FOLDER}}
+{\footnotesize\ttfamily \label{namespaceconfig_abb5c3467db4660963e1b43dd4c05bdd4} 
+str config.\+UPLOAD\+\_\+\+FOLDER = "{}uploads"{}}
+
+
+
+Ścieżka do katalogu, w którym zapisywane są przesyłane zdjęcia. 
+
+\Hypertarget{namespaceconfig_a49c756aa5720ecf2f6de914bcf7f89c4}\index{config@{config}!USER\_FILE@{USER\_FILE}}
+\index{USER\_FILE@{USER\_FILE}!config@{config}}
+\doxysubsubsection{\texorpdfstring{USER\_FILE}{USER\_FILE}}
+{\footnotesize\ttfamily \label{namespaceconfig_a49c756aa5720ecf2f6de914bcf7f89c4} 
+str config.\+USER\+\_\+\+FILE = "{}users.\+json"{}}
+
+
+
+Nazwa pliku JSON przechowującego dane użytkowników. 
+

@@ -1,0 +1,29 @@
+/** @page json_pages Pliki Konfiguracyjne JSON
+ *
+ * @section users_sec Plik danych użytkowników (users.json)
+ * Ten plik przechowuje listę zarejestrowanych użytkowników systemu wraz z ich rolami.
+ * * Przykładowa zawartość:
+ * @code
+ * [
+ * {
+ * "id": 1,
+ * "name": "Admin",
+ * "email": "kiedrowskimarcin@wp.pl",
+ * "role": "admin"
+ * }
+ * ]
+ * @endcode
+ *
+ * @section config_sec Plik konfiguracyjny aplikacji (config.json)
+ * Ten plik zawiera kluczowe ustawienia serwera Flask oraz dane dostępowe do skrzynki SMTP wykorzystywanej przez aplikację.
+ *
+ * Domyślna struktura:
+ * @code
+ * {
+ * "admin_email": "twoj_email@gmail.com",
+ * "email_password": "twoje_haslo_app",
+ * "smtp_server": "smtp.gmail.com",
+ * "smtp_port": 587
+ * }
+ * @endcode
+ */

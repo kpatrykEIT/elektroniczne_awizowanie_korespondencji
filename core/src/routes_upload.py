@@ -1,3 +1,6 @@
+## @package routes_upload
+#  Punkty końcowe (endpoints) Flask obsługujące przesyłanie plików ze zdjęciami (PC oraz ESP).
+
 from flask import Blueprint, request, jsonify
 import os
 import json
@@ -7,9 +10,16 @@ from config import UPLOAD_FOLDER
 from users import find_user_by_id
 from email_service import send_email
 
+## Blueprint dla tras przesyłania plików.
 upload_bp = Blueprint("upload", __name__)
 
 
+## Obsługuje przesyłanie zdjęcia paczki bezpośrednio z komputera (laptopa).
+#  Zapisuje plik i wysyła powiadomienie e-mail do adresata.
+#  @route POST /upload
+#  @request_form file Plik graficzny (.jpg).
+#  @request_form user_id Identyfikator użytkownika docelowego.
+#  @return Odpowiedź JSON ze statusem 200 (sukces) lub 400/404 (błąd).
 @upload_bp.route("/upload", methods=["POST"])
 def upload_photo_from_laptop():
     if "file" not in request.files or "user_id" not in request.form:
@@ -38,6 +48,10 @@ def upload_photo_from_laptop():
     return jsonify({"message": "Photo uploaded and email sent"}), 200
 
 
+## Odbiera proste wiadomości tekstowe/statusowe w formacie JSON z modułu ESP.
+#  @route POST /esp
+#  @request_json Dane wysłane przez ESP.
+#  @return Odpowiedź JSON potwierdzająca odebranie wiadomości.
 @upload_bp.route("/esp", methods=["POST"])
 def esp_message():
     data = request.json
@@ -47,6 +61,12 @@ def esp_message():
     return jsonify({"message": "ESP message received"}), 200
 
 
+## Obsługuje zaawansowane przesyłanie zdjęć i metadanych bezpośrednio z urządzenia ESP.
+#  Generuje unikalną nazwę pliku na podstawie znacznika czasu i powiadamia mailowo użytkownika.
+#  @route POST /esp-upload
+#  @request_form file Plik graficzny z kamery ESP.
+#  @request_form json Ciąg tekstowy JSON zawierający: device_id, user_id, message.
+#  @return Odpowiedź JSON ze statusem 200, 400, 404 lub 500 (błąd serwera).
 @upload_bp.route("/esp-upload", methods=["POST"])
 def esp_upload():
     try:
